@@ -1,0 +1,18 @@
+{
+  "displayTimeUnit": "ns",
+  "traceEvents": [
+    {"ph": "M", "name": "process_name", "pid": 1, "args": {"name": "MTE2"}},
+    {"ph": "M", "name": "process_name", "pid": 2, "args": {"name": "VECTOR"}},
+    {"ph": "M", "name": "process_name", "pid": 3, "args": {"name": "MTE3"}},
+    {"ph": "X", "name": "MOV_OUT_TO_UB", "pid": 1, "tid": 0, "ts": 1.0, "dur": 0.5,
+     "args": {"pc_addr": "0x100", "process_bytes": "256", "detail": "synthetic fixture"}},
+    {"ph": "X", "name": "WAIT_FLAG", "pid": 2, "tid": 0, "ts": 1.2, "dur": 0.3,
+     "args": {"pc_addr": "0x104", "detail": "PIPE:MTE2,TRIGGERPIPE:VEC,FLAGID:0,"}},
+    {"ph": "X", "name": "VADD", "pid": 2, "tid": 0, "ts": 1.5, "dur": 0.4,
+     "args": {"pc_addr": "0x108", "detail": "synthetic fixture"}},
+    {"ph": "X", "name": "SET_FLAG", "pid": 2, "tid": 0, "ts": 1.8, "dur": 0.1,
+     "args": {"pc_addr": "0x10c", "detail": "PIPE:VEC,TRIGGERPIPE:MTE3,FLAGID:0,"}},
+    {"ph": "X", "name": "MOV_UB_TO_OUT", "pid": 3, "tid": 0, "ts": 1.9, "dur": 0.3,
+     "args": {"pc_addr": "0x110", "process_bytes": "256", "detail": "synthetic fixture"}}
+  ]
+}

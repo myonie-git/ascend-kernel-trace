@@ -1,0 +1,9 @@
+{
+  "traceEvents": [
+    {"ph": "M", "name": "process_name", "pid": 1, "args": {"name": "Device tasks"}},
+    {"ph": "X", "name": "sample_kernel", "cat": "kernel", "pid": 1, "tid": 0,
+     "ts": 10, "dur": 5, "args": {}},
+    {"ph": "X", "name": "VCONV", "cat": "kernel", "pid": 1, "tid": 0,
+     "ts": 20, "dur": 5, "args": {}}
+  ]
+}

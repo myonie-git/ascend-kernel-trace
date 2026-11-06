@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ascend Kernel Trace"
+  short_description: "Collect and inspect Ascend instruction timelines"
+  default_prompt: "Use $ascend-kernel-trace to collect or inspect this kernel timeline and distinguish simulator evidence from hardware measurements."
