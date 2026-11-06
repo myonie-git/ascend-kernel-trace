@@ -59,6 +59,24 @@ v0.1 passed 20 offline tests, real instruction/operator trace inspection, and tw
 simulator captures on CANN 9.1.0 / msopprof 26.1.0 (Ascend910_9382). Hardware instruction
 capture and other SoC/tool combinations remain unverified.
 
+## Repository synchronization
+
+GitHub and GitCode synchronize branches and tags in both directions through the
+`Sync GitHub and GitCode` GitHub Actions workflow. GitHub pushes trigger a run;
+a five-minute schedule also checks for GitCode updates. Scheduled runs may be delayed,
+and manual runs are available in Actions.
+
+Only fast-forward branch updates and new refs are copied. Divergent histories or
+different objects for the same tag stop the entire preflight before any push; merge
+the histories manually before retrying. The workflow never force-pushes or deletes
+refs. A one-sided deletion can be recreated, so pause synchronization and delete the
+ref on both repositories when retiring it.
+
+GitCode credentials are stored in the `GITCODE_TOKEN` repository secret. Keep Actions
+workflow changes on GitHub. Updates sent back using `GITHUB_TOKEN` do not trigger
+another push workflow. Each remote push is atomic, but the two repositories are not
+one transaction; a failed run can be retried after resolving any concurrent changes.
+
 ## License
 
 Licensed under the [Apache License 2.0](LICENSE).
